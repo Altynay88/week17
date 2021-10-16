@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<form id="form" class="form">
+    <label for="surname">Фамилия: </label>
+    <input type="text" id="surname" required onblur="upperCase()"> <br>
+    <label for="firstname">Имя:</label>
+    <input type="text" id="firstname" required> <br>
+    <label for="familyname">Отчество: </label>
+    <input type="text" id="familyname" required> <br>
+    <input class="btn" type="submit" name="submit" value="Submit">
+</form>
+
+<body>
+
+    <script>
+        let form = document.getElementById("form");
+        let surname = document.getElementById("surname").value.trim();
+        let surnamebig = surname.charAt(0).toUpperCase() + surname.slice(1).toLowerCase();
+        let firstname = document.getElementById("firstname").value.trim();
+        let firstnamebig = firstname.charAt(0).toUpperCase() + firstname.slice(1).toLowerCase();
+        let familyname = document.getElementById("familyname").value.trim();
+        let familynamebig = familyname.charAt(0).toUpperCase() + familyname.slice(1).toLowerCase();
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault()
+
+            alert(`Имя:  ${firstnamebig} ` + `Фамилия: ${surnamebig}  ` + `Отчество:  ${familynamebig}`);
+
+        });
+    </script>
+</body>
+
+</html>

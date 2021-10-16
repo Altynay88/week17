@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            white-space: pre-line;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        const arr = [];
+
+        for (let i = 0; i < 10; i++) {
+            arr.push(Math.floor(Math.random() * 20) - 10);
+
+
+            function getMaxOfArray(numArray) {
+                return Math.max.apply(null, numArray);
+            }
+
+            function getMinOfArray(numArray) {
+                return Math.min.apply(null, numArray);
+            }
+
+            function total(arr) {
+                if (!Array.isArray(arr)) return;
+                let sum = 0;
+                arr.forEach(each => {
+                    sum += each;
+                });
+                return sum;
+            };
+
+            function average(arr) {
+                if (!Array.isArray(arr)) return;
+                let sum = 0;
+                arr.forEach(each => {
+                    sum += each;
+                });
+                return sum / 10
+            };
+
+            function multi(arr) {
+                if (!Array.isArray(arr)) return;
+                let sum = 0;
+                arr.forEach(each => {
+                    sum *= each;
+                });
+                return sum
+            };
+        }
+        
+        document.write('Сгенерировали:' + arr); 
+        document.write('Максимальное:' + getMaxOfArray(arr));
+        document.write('Минимальное:' + getMinOfArray(arr));
+        document.write('Сумма чисел:' + total(arr));
+        document.write('Среднее арифмитическое число:' + average(arr));
+        document.write('Произведение чисел:' + multi(arr));
+    </script>
+
+</body>
+
+</html>
